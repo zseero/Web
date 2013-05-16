@@ -1,0 +1,95 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title My Website
+    %link{:href => "css/bootstrap.css", :rel => "stylesheet"}/
+    :css
+      /* Override some defaults */
+      html, body {
+        background-color: #eee;
+      }
+      body {
+        /* padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+      }
+      .container > footer p {
+        text-align: center; /* center align it with the container */
+      }
+      .container {
+        width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+      }
+
+      .container > .content {
+        background-color: #fff;
+        padding: 20px;
+        margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+        -webkit-border-radius: 0 0 6px 6px;
+           -moz-border-radius: 0 0 6px 6px;
+                border-radius: 0 0 6px 6px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+      .page-header {
+        background-color: #f5f5f5;
+        padding: 20px 20px 10px;
+        margin: -20px -20px 20px;
+      }
+
+      .content .span10,
+      .content .span4 {
+        min-height: 500px;
+      }
+      .content .span4 {
+        margin-left: 0;
+        padding-left: 19px;
+        border-left: 1px solid #eee;
+      }
+
+      .topbar .btn {
+        border: 0;
+      }
+
+      .marginAdd {
+        margin-top: 10px;
+        margin-bottom: 0px;
+      }
+
+      .paddingAddMore {
+        padding-top: 10px;
+        padding-bottom: 0px;
+      }
+  %body
+    .navbar.navbar-static-top.navbar-inverse
+      .navbar-inner
+        .marginAdd
+          %a.brand{:href => "/"} Project name
+          %ul.nav
+            %li.active
+              %a{:href => "/"} Home
+            %li
+              %a{:href => "/about"} About
+            %li
+              %a{:href => "/contact"} Contact
+          %form.pull-right{:action => ""}
+            .paddingAddMore
+              %input.input-small{:placeholder => "Username", :type => "text"}
+              %input.input-small{:placeholder => "Password", :type => "password"}
+              %button.btn{:type => "submit", :style => "margin-top: -10px;"} Sign in
+    .container
+      .content
+        .page-header
+          %h1
+            Page name
+            %small Supporting text or tagline
+        .row
+          .span10
+            %h2 Main content
+            %p Hello
+            hi
+          .span4
+            %h3 Secondary content
+      %footer
+        %p &copy; Company 2011
+    / /container
